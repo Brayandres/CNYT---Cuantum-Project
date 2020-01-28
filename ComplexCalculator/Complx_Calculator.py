@@ -72,8 +72,8 @@ class Cartesian(Complx):
     def div(self, other):
         """
         Método para dividir de la clase Cartesian, que divide 2 numeros de tipo Cartesian"""
-        return Cartesian(( ((self.real*other.real)+(self.imag*other.imag))/((self.imag**2)+(other.imag**2)) ,
-                        ((self.imag*other.real)-(self.real*other.imag))/((self.imag**2)+(other.imag**2))))
+        return Cartesian( ((self.real*other.real + self.imag*other.imag)/((other.real**2)+(other.imag**2)),
+                           (self.imag*other.real - self.real*other.imag)/((other.real**2)+(other.imag**2))) )
 
     def conj(self):
         """
@@ -85,13 +85,11 @@ class Cartesian(Complx):
         Metodo que devuelve el inverso aditivo de un numero de tipo Cartesian"""
         return Cartesian((-self.real, -self.imag))
 
-    def pol_to_cart(self):
+    def cart_to_pol(self):
         """
-        Metodo que convierte un complejo de tipo pol a un complejo de tipo Cartesian, es decir
-        lo transforma de coordenadas polares a cartesianas"""
-        ratio = self.element_1
-        theta = self.element_2*(math.pi/180)
-        return Cartesian((ratio*math.cos(theta), ratio*math.sin(theta)))
+        Metodo que convierte un complejo de tipo Cartesian a un complejo de tipo Pol, es decir
+        lo transforma de coordenadas cartesianas a polares"""
+        return Pol(( (Cartesian((self.element_1, self.element_2))).mod(), phase((self.element_1, self.element_2)) ))
 
     def mod(self):
         """
@@ -113,12 +111,13 @@ class Pol(Complx):
         self.theta = tupl[1]
         Complx.__init__(self, tupl)
 
-    def cart_to_pol(self):
+    def pol_to_cart(self):
         """
-        Metodo que convierte un complejo de tipo Cartesian a un complejo de tipo Pol, es decir
-        lo transforma de coordenadas cartesianas a polares"""
-        return Pol(( (Cartesian((self.element_1, self.element_2))).mod(), phase((self.element_1, self.element_2)) ))
-
+        Metodo que convierte un complejo de tipo pol a un complejo de tipo Cartesian, es decir
+        lo transforma de coordenadas polares a cartesianas"""
+        ratio = self.element_1
+        theta = self.element_2*(math.pi/180)
+        return Cartesian((ratio*math.cos(theta), ratio*math.sin(theta)))
 
 def phase(tupl):
     """
