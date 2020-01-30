@@ -2,11 +2,6 @@ import math
 import unittest
 from Complx_Calculator import *
 
-#print(Cartesian((1, -10)).div(Cartesian((10, -1))))
-#self.assertEqual(str(Cartesian((, )).$(Cartesian((, )))), "(, )")
-#"("+str()+", "+str()+")"
-
-
 class Test_Complx_Calculator(unittest.TestCase):
     
     def test_add(self):
@@ -52,5 +47,11 @@ class Test_Complx_Calculator(unittest.TestCase):
         self.assertEqual(phase((-11, -1)), 185.19442890773482)
         #COMPLEJO: -11-i
 
+    def test_cart_to_pol(self):
+        self.assertEqual(str(Cartesian((-4, 2)).cart_to_pol()), "(4.47213595499958, 153.43494882292202)")
+        #COMPLEJO: -4+2i
+        self.assertEqual(str(Cartesian((-1, -1000000)).cart_to_pol()), "(1000000.0000005, 269.9999427042205)")
+        #COMPLEJO: -1-1000000i
+        
 if __name__ == "__main__":
     unittest.main()
