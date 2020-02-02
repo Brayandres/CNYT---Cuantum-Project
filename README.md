@@ -4,3 +4,4 @@ Para Esta primera entrega se tiene una calculadora de números complejos que per
 
 ##HERRAMIENTAS
 - Se debe tener conocimientos de programacion ya que el proyecto debe desarrolarse en algun lenguaje como Python o java.
+- Servicio que permite alojar elementos (Para este caso un programa) versionados y realizar contribuciones y/o progresiones.
