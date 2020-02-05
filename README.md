@@ -154,3 +154,9 @@ if __name__ == "__main__":
     unittest.main()
 ```
 
+### EJECUCIÓN DE LAS PRUEBAS
+![alt text](https://github.com/Brayandres/CNYT---Cuantum-Project/blob/master/ComplexCalculator/Images/Pruebas.jpg)
+
+
+## AUTOR
+* **Brayan Macias** - *Develop* -(https://github.com/Brayandres)
