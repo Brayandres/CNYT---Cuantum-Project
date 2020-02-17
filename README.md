@@ -7,10 +7,10 @@ Proyecto del curso CNYT que aborda los temas fundamentales de la programación c
 - GITHUB: Servicio que permite alojar elementos (Para este caso un programa) versionados y realizar contribuciones y/o progresiones, en donde guardaremos nuestro proyecto.
 - Libro guía: "Quantum Computing for Computer Scientists" de Noson S. Yanofsky & Mirco A. Mannucci.
 
-## PRIMERA ENTREGA
+# PRIMERA ENTREGA
 Para Esta primera entrega se tiene una calculadora de números complejos que permite realizar distintas operaciones entre ellos para poder operar de manera adecuada.
 
-### REQUISITOS
+## REQUISITOS
 La librería debe soportar por lo menos las siguientes operaciones entre números complejos:
 - Suma
 - Producto
@@ -21,7 +21,7 @@ La librería debe soportar por lo menos las siguientes operaciones entre número
 - Conversión entre representaciones polar y cartesiano
 - Retornar la fase de un número complejo.
 
-### LIBRERÍA
+## LIBRERÍA
 ```python
 import math
 
@@ -93,7 +93,7 @@ def phase(tupl):
         return math.atan(tupl[1]/tupl[0])*(180/math.pi) + 360
 ```
 
-### PRUEBAS
+## PRUEBAS
 ```python
 import math
 import unittest
@@ -154,7 +154,7 @@ if __name__ == "__main__":
     unittest.main()
 ```
 
-### EJECUCIÓN DE LAS PRUEBAS
+## EJECUCIÓN DE LAS PRUEBAS
 ![alt text](https://github.com/Brayandres/CNYT---Cuantum-Project/blob/master/ComplexCalculator/Images/Pruebas.jpg)
 
 
