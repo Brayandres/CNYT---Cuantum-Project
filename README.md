@@ -1,4 +1,4 @@
-# CALCULADORA DE NÚMEROS COMPLEJOS
+# PROYECTO COMPUTACIÓN CUÁNTICA CNYT
 Proyecto del curso CNYT que aborda los temas fundamentales de la programación cuántica y como es el salto de lo clásico a lo cuántico, basado en sistemas y modelos físico-matemáticos.
 
 ## HERRAMIENTAS
@@ -7,7 +7,7 @@ Proyecto del curso CNYT que aborda los temas fundamentales de la programación c
 - GITHUB: Servicio que permite alojar elementos (Para este caso un programa) versionados y realizar contribuciones y/o progresiones, en donde guardaremos nuestro proyecto.
 - Libro guía: "Quantum Computing for Computer Scientists" de Noson S. Yanofsky & Mirco A. Mannucci.
 
-# PRIMERA ENTREGA
+# PRIMERA ENTREGA - CALCULADORA DE NÚMEROS COMPLEJOS
 Para Esta primera entrega se tiene una calculadora de números complejos que permite realizar distintas operaciones entre ellos para poder operar de manera adecuada.
 
 ## REQUISITOS
