@@ -23,8 +23,8 @@ class Complx(object):
     def __init__(self, tupl):
         """
         Constructor de la clase Principal Complx, que recibe una tupla con 2 elementos"""
-        self.element_1 = tupl[0]
-        self.element_2 = tupl[1]
+        self.element_1 = roundingNumb(tupl[0])
+        self.element_2 = roundingNumb(tupl[1])
 
     def __str__(self):
         """
@@ -33,6 +33,10 @@ class Complx(object):
         o como polar: (radio, theta)
         Funciona con el metodo print(Complx)"""
         return "(" + str(self.element_1) + ", " + str(self.element_2) + ")"
+    
+    def __eq__(self, other):
+        if (self.element_1 == other.element_1) and (self.element_2 == other.element_2): return True
+        return False
 
 class Cartesian(Complx):
     """
@@ -45,11 +49,11 @@ class Cartesian(Complx):
         """
         Constructor de la clase Cartesian, que recibe una tupla con dos elementos en donde asigna respectivamente
         la parte real y la parte imaginaria"""
-        self.real = tupl[0]
-        self.imag = tupl[1]
         """
         Se inicializa con el constructor de la superclase"""
-        Complx.__init__(self, tupl)
+        super().__init__(tupl)
+        self.real = self.element_1
+        self.imag = self.element_2
 
     def __add__(self, other):
         """
@@ -107,17 +111,15 @@ class Pol(Complx):
         """
         Constructor de la clase pol, que recibe una tupla con dos elementos en donde asigna respectivamente
         el radio r y el ángulo theta"""
-        self.ratio = tupl[0]
-        self.theta = tupl[1]
-        Complx.__init__(self, tupl)
+        super().__init__(tupl)
+        self.ratio = self.element_1
+        self.theta = self.element_2*(math.pi/180)
 
     def pol_to_cart(self):
         """
         Metodo que convierte un complejo de tipo pol a un complejo de tipo Cartesian, es decir
         lo transforma de coordenadas polares a cartesianas"""
-        ratio = self.element_1
-        theta = self.element_2*(math.pi/180)
-        return Cartesian((ratio*math.cos(theta), ratio*math.sin(theta)))
+        return Cartesian((self.ratio*math.cos(self.theta), self.ratio*math.sin(self.theta)))
 
 def phase(tupl):
     """
@@ -142,3 +144,9 @@ def phase(tupl):
     #Caso general, cuarto cuadrante
     elif (tupl[0] > 0) and (tupl[1] < 0):
         return math.atan(tupl[1]/tupl[0])*(180/math.pi) + 360
+
+def roundingNumb(a):
+    n = abs(a)
+    if   (round(n, 10) - math.floor(n)) == 0: return round(a)
+    elif (math.ceil(n) - round(n, 10)) == 0: return round(a)
+    else: return a
